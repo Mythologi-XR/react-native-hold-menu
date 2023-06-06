@@ -9,8 +9,9 @@ type IconComponentProps = {
   animatedProps: Partial<{ color: string }>
 }
 
+// Update iconComponent type, React.ComponentClass<IconComponentProps, any>
 type IconProps = {
-  iconComponent: React.ComponentClass<IconComponentProps, any>
+  iconComponent: any
   name: string
 }
 
