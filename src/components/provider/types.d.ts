@@ -1,3 +1,5 @@
+import type { EdgeInsets } from 'react-native-safe-area-context'
+
 export interface HoldMenuProviderProps {
   /**
    * Theme of hold menu. Effects to backdrop and context menu styles. Optional.
@@ -12,21 +14,16 @@ export interface HoldMenuProviderProps {
 
   /**
    * Set this to prevent the menu to be opened under the unsafe area.
-   * @type object
    * @default
    * { top: 0, bottom: 0, right: 0, left: 0 }
-   * @examples
-   * ```
+   *
+   * @example
+   * ```tsx
    * const insets = useSafeAreaInsets();
-   * safeAreaInsets={insets}
+   * <Provider safeAreaInsets={insets} />
    * ```
    */
-  safeAreaInsets: {
-    top: number
-    right: number
-    bottom: number
-    left: number
-  }
+  safeAreaInsets?: EdgeInsets
 
   onOpen?: () => void
   onClose?: () => void

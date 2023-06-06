@@ -1,8 +1,9 @@
 import { TransformOriginAnchorPosition } from '../../utils/calculations'
+import type { SFSymbol } from 'sf-symbols-typescript'
 
 export type MenuItemProps = {
   text: string
-  icon?: string | (() => React.ReactElement)
+  icon?: SFSymbol | (() => React.ReactElement)
   onPress?: (...args: any[]) => void
   isTitle?: boolean
   isDestructive?: boolean
