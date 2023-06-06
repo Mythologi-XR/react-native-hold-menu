@@ -18,10 +18,9 @@
 
   -webkit-font-smoothing: antialiased;
   --max-content-width: 1200px;
-  --mono-font-stack: "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono",
-    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
-    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco,
-    "Courier New", Courier, monospace;
+  --mono-font-stack: 'Roboto Mono', Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
+    'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
 
   --text-color: #515151;
 }

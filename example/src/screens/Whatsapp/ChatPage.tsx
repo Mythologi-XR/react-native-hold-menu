@@ -1,28 +1,28 @@
-import React, { memo, useMemo, useCallback } from 'react';
-import { Alert, StyleSheet } from 'react-native';
+import React, { memo, useMemo, useCallback } from 'react'
+import { Alert, StyleSheet } from 'react-native'
 
-import StyleGuide from '../../utilities/styleGuide';
+import StyleGuide from '../../utilities/styleGuide'
 
-import MessageItem from './MessageItem';
-import { mockWhatsAppData } from '../../utilities/data';
-import { useAppContext } from '../../hooks/useAppContext';
-import { HoldMenuFlatList } from 'react-native-hold-menu';
+import MessageItem from './MessageItem'
+import { mockWhatsAppData } from '../../utilities/data'
+import { useAppContext } from '../../hooks/useAppContext'
+import { HoldMenuFlatList } from 'react-native-hold-menu'
 
 const ChatPage = () => {
-  const { theme } = useAppContext();
-  const data = useMemo(() => mockWhatsAppData(1000), []);
+  const { theme } = useAppContext()
+  const data = useMemo(() => mockWhatsAppData(1000), [])
 
   const replyMessage = useCallback((messageId: string) => {
-    Alert.alert(`[ACTION]: REPLY' ${messageId}`);
-  }, []);
+    Alert.alert(`[ACTION]: REPLY' ${messageId}`)
+  }, [])
 
   const copyMessage = useCallback((messageText: string) => {
-    Alert.alert(`[ACTION]: REPLY' ${messageText}`);
-  }, []);
+    Alert.alert(`[ACTION]: REPLY' ${messageText}`)
+  }, [])
 
   const editMessage = useCallback((messageId: string, messageText: string) => {
-    Alert.alert(`[ACTION]: REPLY' ${messageId} - ${messageText}`);
-  }, []);
+    Alert.alert(`[ACTION]: REPLY' ${messageId} - ${messageText}`)
+  }, [])
 
   const myMenu = [
     {
@@ -55,7 +55,7 @@ const ChatPage = () => {
       icon: 'trash-2',
       onPress: () => {},
     },
-  ];
+  ]
 
   const otherMenu = [
     {
@@ -83,28 +83,22 @@ const ChatPage = () => {
       icon: 'trash-2',
       onPress: () => {},
     },
-  ];
+  ]
 
   const renderMessage = useCallback(
-    ({ item }) => (
-      <MessageItem
-        senderMenu={myMenu}
-        receiverMenu={otherMenu}
-        message={item}
-      />
-    ),
-    [myMenu, otherMenu]
-  );
+    ({ item }) => <MessageItem senderMenu={myMenu} receiverMenu={otherMenu} message={item} />,
+    [myMenu, otherMenu],
+  )
 
-  const keyExtractor = useCallback(item => item.id.toString(), []);
+  const keyExtractor = useCallback(item => item.id.toString(), [])
 
   const themeStyles = useMemo(() => {
     return {
       container: {
         backgroundColor: StyleGuide.palette.whatsapp[theme].chatBackground,
       },
-    };
-  }, [theme]);
+    }
+  }, [theme])
 
   return (
     <HoldMenuFlatList
@@ -117,13 +111,13 @@ const ChatPage = () => {
       maxToRenderPerBatch={4}
       inverted
     />
-  );
-};
+  )
+}
 
-export default memo(ChatPage);
+export default memo(ChatPage)
 
 const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: StyleGuide.spacing,
   },
-});
+})

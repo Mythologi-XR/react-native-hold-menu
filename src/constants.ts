@@ -1,8 +1,8 @@
-import { Dimensions, Platform } from 'react-native';
+import { Dimensions, Platform } from 'react-native'
 
-const HOLD_ITEM_TRANSFORM_DURATION = 150;
-const HOLD_ITEM_SCALE_DOWN_VALUE = 0.95;
-const HOLD_ITEM_SCALE_DOWN_DURATION = 210;
+const HOLD_ITEM_TRANSFORM_DURATION = 150
+const HOLD_ITEM_SCALE_DOWN_VALUE = 0.95
+const HOLD_ITEM_SCALE_DOWN_DURATION = 210
 
 const SPRING_CONFIGURATION = {
   damping: 33,
@@ -10,7 +10,7 @@ const SPRING_CONFIGURATION = {
   stiffness: 500,
   restDisplacementThreshold: 0.001,
   restSpeedThreshold: 0.001,
-};
+}
 
 const SPRING_CONFIGURATION_MENU = {
   damping: 39,
@@ -18,7 +18,7 @@ const SPRING_CONFIGURATION_MENU = {
   stiffness: 500,
   restDisplacementThreshold: 0.001,
   restSpeedThreshold: 0.001,
-};
+}
 
 enum CONTEXT_MENU_STATE {
   UNDETERMINED = 0,
@@ -26,16 +26,16 @@ enum CONTEXT_MENU_STATE {
   END,
 }
 
-const { height: WINDOW_HEIGHT, width: WINDOW_WIDTH } = Dimensions.get('screen');
+const { height: WINDOW_HEIGHT, width: WINDOW_WIDTH } = Dimensions.get('screen')
 
-const MENU_CONTAINER_WIDTH = 100;
-const MENU_WIDTH = (WINDOW_WIDTH * 60) / 100;
+const MENU_CONTAINER_WIDTH = 100
+const MENU_WIDTH = (WINDOW_WIDTH * 60) / 100
 
-const MENU_TRANSFORM_ORIGIN_TOLERENCE = 10;
+const MENU_TRANSFORM_ORIGIN_TOLERENCE = 10
 
-const IS_IOS = Platform.OS === 'ios';
+const IS_IOS = Platform.OS === 'ios'
 
-const FONT_SCALE = Dimensions.get('screen').fontScale;
+const FONT_SCALE = Dimensions.get('screen').fontScale
 
 export {
   CONTEXT_MENU_STATE,
@@ -51,4 +51,4 @@ export {
   MENU_TRANSFORM_ORIGIN_TOLERENCE,
   IS_IOS,
   FONT_SCALE,
-};
+}

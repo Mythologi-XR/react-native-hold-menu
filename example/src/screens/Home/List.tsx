@@ -1,8 +1,8 @@
-import React from 'react';
-import { FlatList } from 'react-native';
+import React from 'react'
+import { FlatList } from 'react-native'
 
-import ListItem from './ListItem';
-import { ListItemProps } from './types';
+import ListItem from './ListItem'
+import { ListItemProps } from './types'
 
 const ListItems: ListItemProps[] = [
   {
@@ -17,10 +17,10 @@ const ListItems: ListItemProps[] = [
   {
     title: 'Clubhouse',
   },
-];
+]
 
 interface ListProps {
-  onPress: (route: string) => void;
+  onPress: (route: string) => void
 }
 
 const List = ({ onPress }: ListProps) => {
@@ -29,17 +29,11 @@ const List = ({ onPress }: ListProps) => {
       data={ListItems}
       keyExtractor={(_, index) => String(index)}
       renderItem={({ item, index }: { item: ListItemProps; index: number }) => {
-        const isLastItem = index === ListItems.length - 1;
-        return (
-          <ListItem
-            item={item}
-            onPress={() => onPress(item.title)}
-            isLast={isLastItem}
-          />
-        );
+        const isLastItem = index === ListItems.length - 1
+        return <ListItem item={item} onPress={() => onPress(item.title)} isLast={isLastItem} />
       }}
     />
-  );
-};
+  )
+}
 
-export default List;
+export default List

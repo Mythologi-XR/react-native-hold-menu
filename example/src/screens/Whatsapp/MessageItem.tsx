@@ -1,44 +1,41 @@
-import React, { memo, useMemo } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { memo, useMemo } from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
-import StyleGuide from '../../utilities/styleGuide';
+import StyleGuide from '../../utilities/styleGuide'
 
-import { MessageStyles } from './variables';
-import { useAppContext } from '../../hooks/useAppContext';
+import { MessageStyles } from './variables'
+import { useAppContext } from '../../hooks/useAppContext'
 
 // React Native Hold Menu Components
-import { HoldItem } from 'react-native-hold-menu';
-import { IS_IOS } from '../../constants';
+import { HoldItem } from 'react-native-hold-menu'
+import { IS_IOS } from '../../constants'
 
 const MessageItemComp = ({
   senderMenu,
   receiverMenu,
   message,
 }: {
-  senderMenu: any;
-  receiverMenu: any;
-  message: any;
+  senderMenu: any
+  receiverMenu: any
+  message: any
 }) => {
-  const { theme } = useAppContext();
+  const { theme } = useAppContext()
 
   const themeStyles = useMemo(() => {
     return {
       messageContainer: [styles.messageContainer],
       message: [styles.message],
-      messageText: [
-        styles.messageText,
-        { color: StyleGuide.palette.whatsapp[theme].messageText },
-      ],
-    };
-  }, [theme]);
+      messageText: [styles.messageText, { color: StyleGuide.palette.whatsapp[theme].messageText }],
+    }
+  }, [theme])
 
   const methodProps = useMemo(() => {
     return {
       Reply: [message.id],
       Copy: [message.text],
       Edit: [message.id, message.text],
-    };
-  }, [message]);
+    }
+  }, [message])
 
   return (
     <View
@@ -46,8 +43,7 @@ const MessageItemComp = ({
         themeStyles.messageContainer,
         // eslint-disable-next-line react-native/no-inline-styles
         { alignItems: message.fromMe ? 'flex-end' : 'flex-start' },
-      ]}
-    >
+      ]}>
       <HoldItem
         actionParams={methodProps}
         items={message.fromMe ? senderMenu : receiverMenu}
@@ -56,25 +52,23 @@ const MessageItemComp = ({
           position: 'relative',
           maxWidth: '80%',
         }}
-        closeOnTap
-      >
+        closeOnTap>
         <View
           style={[
             themeStyles.message,
             IS_IOS && styles.shadow,
             { ...MessageStyles(message.fromMe, theme) },
-          ]}
-        >
+          ]}>
           <Text style={themeStyles.messageText}>{message.text}</Text>
         </View>
       </HoldItem>
     </View>
-  );
-};
+  )
+}
 
-const MessageItem = memo(MessageItemComp);
+const MessageItem = memo(MessageItemComp)
 
-export default MessageItem;
+export default MessageItem
 
 const styles = StyleSheet.create({
   messageContainer: {
@@ -109,4 +103,4 @@ const styles = StyleSheet.create({
     ...StyleGuide.typography.body,
     textAlign: 'left',
   },
-});
+})

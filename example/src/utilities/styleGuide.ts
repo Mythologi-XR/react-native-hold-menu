@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import { Dimensions } from 'react-native'
 
 const StyleGuide = {
   spacing: 8,
@@ -93,6 +93,6 @@ const StyleGuide = {
     alignItems: 'center',
     justifyContent: 'center',
   },
-};
+}
 
-export default StyleGuide;
+export default StyleGuide

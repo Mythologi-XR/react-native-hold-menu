@@ -44,8 +44,8 @@ Set object of safe area inset values to prevent the menu to be opened under the 
 #### Example
 
 ```tsx
-const safeAreaInsets = useSafeAreaProvider();
-<HoldMenuProvider safeAreaInsets={safeAreaInsets} />;
+const safeAreaInsets = useSafeAreaProvider()
+;<HoldMenuProvider safeAreaInsets={safeAreaInsets} />
 ```
 
 ### `onOpen`
@@ -57,9 +57,9 @@ Fires callback when menu is opened
 ```tsx
 const onOpen = useCallback(() => {
   console.log('App onOpen')
-}, []);
+}, [])
 
-<HoldMenuProvider onOpen={onOpen} />;
+;<HoldMenuProvider onOpen={onOpen} />
 ```
 
 ### `onClose`
@@ -71,9 +71,9 @@ Fires callback when menu is opened
 ```tsx
 const onClose = useCallback(() => {
   console.log('App onClose')
-}, []);
+}, [])
 
-<HoldMenuProvider onClose={onClose} />;
+;<HoldMenuProvider onClose={onClose} />
 ```
 
 ## HoldItem
@@ -244,9 +244,9 @@ Set true if you want to close menu when tap to HoldItem
 
 Set delay before long tap will activate gesture. May be useful to increase this value in lists
 
-| type    | default | required |
-| ------- | ------- | -------- |
-| number  | 150     | NO       |
+| type   | default | required |
+| ------ | ------- | -------- |
+| number | 150     | NO       |
 
 #### Example
 

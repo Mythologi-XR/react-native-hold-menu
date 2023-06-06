@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   holdItem: { zIndex: 10, position: 'absolute' },
@@ -6,6 +6,6 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     zIndex: 15,
   },
-});
+})
 
-export default styles;
+export default styles

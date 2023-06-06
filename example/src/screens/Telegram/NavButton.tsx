@@ -1,35 +1,32 @@
-import React, { useMemo } from 'react';
-import { Pressable, StyleSheet, View, Text } from 'react-native';
-import Animated from 'react-native-reanimated';
-import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import React, { useMemo } from 'react'
+import { Pressable, StyleSheet, View, Text } from 'react-native'
+import Animated from 'react-native-reanimated'
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 
-import { Feather as Icons } from '@expo/vector-icons';
-import StyleGuide from '../../utilities/styleGuide';
-import { HoldItem } from 'react-native-hold-menu';
-import { useAppContext } from '../../hooks/useAppContext';
+import { Feather as Icons } from '@expo/vector-icons'
+import StyleGuide from '../../utilities/styleGuide'
+import { HoldItem } from 'react-native-hold-menu'
+import { useAppContext } from '../../hooks/useAppContext'
 
 interface INavButton extends BottomTabBarProps {
-  icon: string;
-  title: string;
-  id: number;
-  active: Animated.SharedValue<number>;
-  menuItems: any;
-  onActive: (arg: number) => void;
+  icon: string
+  title: string
+  id: number
+  active: Animated.SharedValue<number>
+  menuItems: any
+  onActive: (arg: number) => void
 }
 
 function NavButton({ icon, title, menuItems }: INavButton) {
-  const { theme } = useAppContext();
+  const { theme } = useAppContext()
 
   const themeStyles = useMemo(() => {
     return {
-      button: [
-        styles.button,
-        { backgroundColor: StyleGuide.palette[theme].secondary },
-      ],
+      button: [styles.button, { backgroundColor: StyleGuide.palette[theme].secondary }],
       text: [styles.text, { color: StyleGuide.palette[theme].color }],
       color: StyleGuide.palette[theme].color,
-    };
-  }, [theme]);
+    }
+  }, [theme])
 
   return (
     <>
@@ -44,10 +41,10 @@ function NavButton({ icon, title, menuItems }: INavButton) {
         </View>
       </Pressable>
     </>
-  );
+  )
 }
 
-export default NavButton;
+export default NavButton
 
 const styles = StyleSheet.create({
   button: {
@@ -75,4 +72,4 @@ const styles = StyleSheet.create({
     marginTop: StyleGuide.spacing,
     fontSize: 12,
   },
-});
+})

@@ -1,17 +1,17 @@
-import React, { useMemo } from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React, { useMemo } from 'react'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import NavButton from './NavButton';
-import { ContactsScreen, ChatScreen, SettingsScreen } from './Pages';
-import StyleGuide from '../../utilities/styleGuide';
-import { useAppContext } from '../../hooks/useAppContext';
+import NavButton from './NavButton'
+import { ContactsScreen, ChatScreen, SettingsScreen } from './Pages'
+import StyleGuide from '../../utilities/styleGuide'
+import { useAppContext } from '../../hooks/useAppContext'
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator()
 
 interface TelegramProps {}
 
 const Telegram = ({}: TelegramProps) => {
-  const { theme } = useAppContext();
+  const { theme } = useAppContext()
 
   const profileMenu = useMemo(
     () => [
@@ -19,19 +19,19 @@ const Telegram = ({}: TelegramProps) => {
         text: 'Add Account',
         icon: 'plus',
         onPress: () => {
-          console.log('[ACTION]: Add Account');
+          console.log('[ACTION]: Add Account')
         },
       },
       {
         text: 'Enes Ozturk',
         icon: 'user',
         onPress: () => {
-          console.log('[ACTION]: Profile');
+          console.log('[ACTION]: Profile')
         },
       },
     ],
-    []
-  );
+    [],
+  )
 
   const chatMenu = useMemo(
     () => [
@@ -39,12 +39,12 @@ const Telegram = ({}: TelegramProps) => {
         text: 'Add Folder',
         icon: 'plus',
         onPress: () => {
-          console.log('[ACTION]: Add Folder');
+          console.log('[ACTION]: Add Folder')
         },
       },
     ],
-    []
-  );
+    [],
+  )
 
   const themeStyles = useMemo(() => {
     return {
@@ -56,8 +56,8 @@ const Telegram = ({}: TelegramProps) => {
         borderTopColor: StyleGuide.palette[theme].secondary,
         paddingTop: StyleGuide.spacing / 2,
       },
-    };
-  }, [theme]);
+    }
+  }, [theme])
 
   return (
     <>
@@ -65,14 +65,11 @@ const Telegram = ({}: TelegramProps) => {
         sceneContainerStyle={themeStyles.sceneContainer}
         tabBarOptions={{
           style: themeStyles.tabBarStyle,
-        }}
-      >
+        }}>
         <Tab.Screen
           name="Calls"
           options={{
-            tabBarButton: props => (
-              <NavButton title="Calls" icon="users" menuItems={[]} {...props} />
-            ),
+            tabBarButton: props => <NavButton title="Calls" icon="users" menuItems={[]} {...props} />,
           }}
           component={ContactsScreen}
         />
@@ -80,12 +77,7 @@ const Telegram = ({}: TelegramProps) => {
           name="Chat"
           options={{
             tabBarButton: props => (
-              <NavButton
-                title="Chat"
-                icon="message-square"
-                menuItems={chatMenu}
-                {...props}
-              />
+              <NavButton title="Chat" icon="message-square" menuItems={chatMenu} {...props} />
             ),
           }}
           component={ChatScreen}
@@ -94,19 +86,14 @@ const Telegram = ({}: TelegramProps) => {
           name="Settings"
           options={{
             tabBarButton: props => (
-              <NavButton
-                title="Settings"
-                icon="settings"
-                menuItems={profileMenu}
-                {...props}
-              />
+              <NavButton title="Settings" icon="settings" menuItems={profileMenu} {...props} />
             ),
           }}
           component={SettingsScreen}
         />
       </Tab.Navigator>
     </>
-  );
-};
+  )
+}
 
-export default Telegram;
+export default Telegram

@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { MENU_WIDTH } from '../../constants';
-import styleGuide from '../../styleGuide';
+import { StyleSheet } from 'react-native'
+import { MENU_WIDTH } from '../../constants'
+import styleGuide from '../../styleGuide'
 
 const styles = StyleSheet.create({
   menuWrapper: {
@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
   textLight: {
     color: 'white',
   },
-});
+})
 
-export default styles;
+export default styles

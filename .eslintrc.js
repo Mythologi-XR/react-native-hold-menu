@@ -6,13 +6,16 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        printWidth: 80,
-        arrowParens: 'avoid',
-        singleQuote: true,
+        printWidth: 105,
         tabWidth: 2,
-        trailingComma: 'es5',
         useTabs: false,
+        semi: false,
+        singleQuote: true,
+        trailingComma: 'all',
+        bracketSpacing: true,
+        bracketSameLine: true,
+        arrowParens: 'avoid',
       },
     ],
   },
-};
+}

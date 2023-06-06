@@ -4,8 +4,7 @@
   align-items: center;
   justify-content: space-between;
   height: var(--ifm-navbar-height);
-  padding: var(--ifm-navbar-padding-vertical)
-    var(--ifm-navbar-padding-horizontal);
+  padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
   background: var(--ifm-navbar-background-color);
 }
 

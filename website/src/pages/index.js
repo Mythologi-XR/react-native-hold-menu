@@ -1,35 +1,29 @@
-import React from 'react';
-import Layout from '@theme/Layout';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import React from 'react'
+import Layout from '@theme/Layout'
+import useThemeContext from '@theme/hooks/useThemeContext'
 
-import styles from '../css/header.module.css';
-import CopySvg from '@site/static/svg/copy.svg';
-import DarkImage from '@site/static/img/masked-dark-phone.png';
-import LightImage from '@site/static/img/masked-light-phone.png';
+import styles from '../css/header.module.css'
+import CopySvg from '@site/static/svg/copy.svg'
+import DarkImage from '@site/static/img/masked-dark-phone.png'
+import LightImage from '@site/static/img/masked-light-phone.png'
 
-import Link from '@docusaurus/Link';
+import Link from '@docusaurus/Link'
 
 function Content() {
-  const { isDarkTheme } = useThemeContext();
+  const { isDarkTheme } = useThemeContext()
 
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
         <section className={styles.hero}>
           <div className={styles.phoneImageWrapperOnLeft}>
-            <img
-              src={isDarkTheme ? DarkImage : LightImage}
-              style={{ maxHeight: 450 }}
-            />
+            <img src={isDarkTheme ? DarkImage : LightImage} style={{ maxHeight: 450 }} />
           </div>
           <div className={styles.heroWrapper}>
-            <h1 className={styles.heading}>
-              Make your components more interactable
-            </h1>
+            <h1 className={styles.heading}>Make your components more interactable</h1>
             <h2 className={styles.subHeading}>
               A performant, easy to use
-              <strong>hold to open context menu</strong> for React Native
-              powered by Reanimated.
+              <strong>hold to open context menu</strong> for React Native powered by Reanimated.
             </h2>
             <div className={`${styles.flex} ${styles.buttonsWrapper}`}>
               <div className={styles.flexItem}>
@@ -40,12 +34,7 @@ function Content() {
               <div className={styles.flexItem}>
                 <button
                   className={styles.copyPaste}
-                  onClick={() =>
-                    navigator.clipboard.writeText(
-                      'yarn add react-native-hold-menu'
-                    )
-                  }
-                >
+                  onClick={() => navigator.clipboard.writeText('yarn add react-native-hold-menu')}>
                   yarn add react-native-hold-menu
                   <CopySvg className={styles.copyIcon} />
                 </button>
@@ -53,15 +42,12 @@ function Content() {
             </div>
           </div>
           <div className={styles.phoneImageWrapper}>
-            <img
-              src={isDarkTheme ? DarkImage : LightImage}
-              style={{ maxHeight: 450 }}
-            />
+            <img src={isDarkTheme ? DarkImage : LightImage} style={{ maxHeight: 450 }} />
           </div>
         </section>
       </div>
     </header>
-  );
+  )
 }
 
 function Home() {
@@ -69,7 +55,7 @@ function Home() {
     <Layout>
       <Content />
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home

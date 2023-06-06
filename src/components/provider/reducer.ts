@@ -1,10 +1,10 @@
-import { CONTEXT_MENU_STATE } from '../../constants';
+import { CONTEXT_MENU_STATE } from '../../constants'
 
 export type StateProps = {
-  active: number;
-  activeItem: string | null;
-  theme: 'light' | 'dark';
-};
+  active: number
+  activeItem: string | null
+  theme: 'light' | 'dark'
+}
 
 export enum ActionType {
   Active = 'Active',
@@ -15,7 +15,7 @@ export enum ActionType {
 export type Action =
   | { type: ActionType.Active; activeItem: string | null }
   | { type: ActionType.End }
-  | { type: ActionType.Theme };
+  | { type: ActionType.Theme }
 
 export const reducer = (state: StateProps, action: Action): StateProps => {
   switch (action.type) {
@@ -24,25 +24,25 @@ export const reducer = (state: StateProps, action: Action): StateProps => {
         ...state,
         active: CONTEXT_MENU_STATE.ACTIVE,
         activeItem: action.activeItem,
-      };
+      }
     case ActionType.End:
       return {
         ...state,
         active: CONTEXT_MENU_STATE.END,
         activeItem: null,
-      };
+      }
     case ActionType.Theme:
       return {
         ...state,
         theme: state.theme === 'dark' ? 'light' : 'dark',
-      };
+      }
     default:
-      return state;
+      return state
   }
-};
+}
 
 export const initialState: StateProps = {
   active: 0,
   activeItem: null,
   theme: 'light',
-};
+}

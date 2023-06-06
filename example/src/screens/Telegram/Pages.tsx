@@ -1,27 +1,27 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import StyleGuide from '../../utilities/styleGuide';
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+import StyleGuide from '../../utilities/styleGuide'
 
 export function ContactsScreen() {
   return (
     <View style={styles.container}>
       <Text>Contacts</Text>
     </View>
-  );
+  )
 }
 export function CallsScreen() {
   return (
     <View style={styles.container}>
       <Text>Calls</Text>
     </View>
-  );
+  )
 }
 export function ChatScreen() {
   return (
     <View style={styles.container}>
       <Text>Chat</Text>
     </View>
-  );
+  )
 }
 
 export function SettingsScreen() {
@@ -29,7 +29,7 @@ export function SettingsScreen() {
     <View style={styles.container}>
       <Text>Settings</Text>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
     paddingHorizontal: StyleGuide.spacing * 2,
     zIndex: 6,
   },
-});
+})

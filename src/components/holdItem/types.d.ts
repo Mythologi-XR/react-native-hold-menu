@@ -1,6 +1,6 @@
-import { ViewStyle } from 'react-native';
-import { MenuItemProps } from '../menu/types';
-import { TransformOriginAnchorPosition } from '../../utils/calculations';
+import { ViewStyle } from 'react-native'
+import { MenuItemProps } from '../menu/types'
+import { TransformOriginAnchorPosition } from '../../utils/calculations'
 
 export type HoldItemProps = {
   /**
@@ -8,7 +8,7 @@ export type HoldItemProps = {
    * @type MenuItemProps[]
    * @default []
    */
-  items: MenuItemProps[];
+  items: MenuItemProps[]
 
   /**
    * Object of keys that same name with items to match parameters to onPress actions.
@@ -30,10 +30,10 @@ export type HoldItemProps = {
    * ```
    */
   actionParams?: {
-    [name: string]: any[];
-  };
+    [name: string]: any[]
+  }
 
-  children: React.ReactElement | React.ReactElement[];
+  children: React.ReactElement | React.ReactElement[]
 
   /**
    * Menu anchor position is calculated automaticly.
@@ -42,7 +42,7 @@ export type HoldItemProps = {
    * @examples
    * menuAnchorPosition="top-bottom"
    */
-  menuAnchorPosition?: TransformOriginAnchorPosition;
+  menuAnchorPosition?: TransformOriginAnchorPosition
 
   /**
    * Disables moving holded item
@@ -51,7 +51,7 @@ export type HoldItemProps = {
    * @examples
    * disableMove={true}
    */
-  disableMove?: boolean;
+  disableMove?: boolean
 
   /**
    * HoldItem wrapper component styles.
@@ -62,7 +62,7 @@ export type HoldItemProps = {
    * @examples
    * containerStyles={{ maxWidth: '80%' }}
    */
-  containerStyles?: ViewStyle | ViewStyle[];
+  containerStyles?: ViewStyle | ViewStyle[]
 
   /**
    * Theme for menu background and texts
@@ -70,7 +70,7 @@ export type HoldItemProps = {
    * @examples
    * theme="light"
    */
-  theme?: 'light' | 'dark';
+  theme?: 'light' | 'dark'
 
   /**
    * Set true if you want to open menu from bottom
@@ -79,7 +79,7 @@ export type HoldItemProps = {
    * @examples
    * bottom={true}
    */
-  bottom?: boolean;
+  bottom?: boolean
 
   /**
    * Set if you'd like a different tap activation
@@ -88,7 +88,7 @@ export type HoldItemProps = {
    * @examples
    * activateOn="hold"
    */
-  activateOn?: 'tap' | 'double-tap' | 'hold';
+  activateOn?: 'tap' | 'double-tap' | 'hold'
 
   /**
    * Set if you'd like to enable haptic feedback on activation
@@ -97,15 +97,7 @@ export type HoldItemProps = {
    * @examples
    * hapticFeedback="None"
    */
-  hapticFeedback?:
-    | 'None'
-    | 'Selection'
-    | 'Light'
-    | 'Medium'
-    | 'Heavy'
-    | 'Success'
-    | 'Warning'
-    | 'Error';
+  hapticFeedback?: 'None' | 'Selection' | 'Light' | 'Medium' | 'Heavy' | 'Success' | 'Warning' | 'Error'
 
   /**
    * Set true if you want to close menu when tap to HoldItem
@@ -114,7 +106,7 @@ export type HoldItemProps = {
    * @examples
    * closeOnTap={true}
    */
-  closeOnTap?: boolean;
+  closeOnTap?: boolean
 
   /**
    * Set delay before long tap will activate gesture. May be useful to increase this value in lists
@@ -123,9 +115,9 @@ export type HoldItemProps = {
    * @examples
    * longPressMinDurationMs={250}
    */
-  longPressMinDurationMs?: number;
-};
+  longPressMinDurationMs?: number
+}
 
 export type GestureHandlerProps = {
-  children: React.ReactElement | React.ReactElement[];
-};
+  children: React.ReactElement | React.ReactElement[]
+}

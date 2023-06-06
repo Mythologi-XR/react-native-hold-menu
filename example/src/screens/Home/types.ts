@@ -1,4 +1,4 @@
 export type ListItemProps = {
-  title: string;
-  image?: any;
-};
+  title: string
+  image?: any
+}

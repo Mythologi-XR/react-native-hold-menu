@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { WINDOW_WIDTH } from '../../constants';
-import StyleGuide from '../../utilities/styleGuide';
+import { StyleSheet } from 'react-native'
+import { WINDOW_WIDTH } from '../../constants'
+import StyleGuide from '../../utilities/styleGuide'
 
 const styles = StyleSheet.create({
   container: {
@@ -72,6 +72,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: -5,
   },
-});
+})
 
-export default styles;
+export default styles

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Video = ({ title, url }) => {
   return (
@@ -9,11 +9,10 @@ const Video = ({ title, url }) => {
       controls={false}
       playsInline={true}
       title={title}
-      width="100%"
-    >
+      width="100%">
       <source src={url} type="video/mp4" />
     </video>
-  );
-};
+  )
+}
 
-export default Video;
+export default Video

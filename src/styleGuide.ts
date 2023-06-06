@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import { Dimensions } from 'react-native'
 
 const styleGuide = {
   spacing: 8,
@@ -26,6 +26,6 @@ const styleGuide = {
       lineHeight: 18,
     },
   },
-};
+}
 
-export default styleGuide;
+export default styleGuide

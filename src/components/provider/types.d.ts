@@ -6,9 +6,9 @@ export interface HoldMenuProviderProps {
    * @examples
    * theme="light"
    */
-  theme?: 'dark' | 'light';
-  iconComponent?: any;
-  children: React.ReactElement | React.ReactElement[];
+  theme?: 'dark' | 'light'
+  iconComponent?: any
+  children: React.ReactElement | React.ReactElement[]
 
   /**
    * Set this to prevent the menu to be opened under the unsafe area.
@@ -22,12 +22,12 @@ export interface HoldMenuProviderProps {
    * ```
    */
   safeAreaInsets: {
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-  };
+    top: number
+    right: number
+    bottom: number
+    left: number
+  }
 
-  onOpen?: function;
-  onClose?: function;
+  onOpen?: function
+  onClose?: function
 }
