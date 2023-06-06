@@ -92,6 +92,7 @@ const BackdropComponent = () => {
     <TapGestureHandler onHandlerStateChange={tapGestureEvent}>
       <AnimatedBlurView
         tint="default"
+        // @ts-ignore
         animatedProps={animatedContainerProps}
         style={[styles.container, animatedContainerStyle]}>
         <Animated.View style={[{ ...StyleSheet.absoluteFillObject }, animatedInnerContainerStyle]} />

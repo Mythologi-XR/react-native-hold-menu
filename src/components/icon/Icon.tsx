@@ -25,6 +25,7 @@ const Icon = ({ iconComponent, name }: IconProps) => {
     }
   }, [theme])
 
+  // @ts-ignore
   return <AnimatedIcon name={name} size={18} animatedProps={iconProps} />
 }
 
