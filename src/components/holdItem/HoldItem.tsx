@@ -1,7 +1,6 @@
 import React, { memo, useMemo } from 'react'
 import { ViewProps } from 'react-native'
 
-//#region reanimated & gesture handler
 import {
   TapGestureHandler,
   LongPressGestureHandler,
@@ -22,15 +21,11 @@ import Animated, {
   withSpring,
   useAnimatedReaction,
 } from 'react-native-reanimated'
-//#endregion
 
-//#region dependencies
 import { Portal } from '@gorhom/portal'
 import { nanoid } from 'nanoid/non-secure'
 import * as Haptics from 'expo-haptics'
-//#endregion
 
-//#region utils & types
 import {
   TransformOriginAnchorPosition,
   getTransformOrigin,
@@ -45,13 +40,11 @@ import {
   WINDOW_WIDTH,
   CONTEXT_MENU_STATE,
 } from '../../constants'
-import { useDeviceOrientation } from '../../hooks'
+import { useDeviceOrientation, useInternal } from '../../hooks'
+import styleGuide from '../../styleGuide'
 import styles from './styles'
 
 import type { HoldItemProps, GestureHandlerProps } from './types'
-import styleGuide from '../../styleGuide'
-import { useInternal } from '../../hooks'
-//#endregion
 
 type Context = { didMeasureLayout: boolean }
 
@@ -68,12 +61,9 @@ const HoldItemComponent = ({
   longPressMinDurationMs = 150,
   children,
 }: HoldItemProps) => {
-  //#region hooks
   const { state, menuProps, safeAreaInsets } = useInternal()
   const deviceOrientation = useDeviceOrientation()
-  //#endregion
 
-  //#region variables
   const isActive = useSharedValue(false)
   const isAnimationStarted = useSharedValue(false)
 
@@ -95,13 +85,9 @@ const HoldItemComponent = ({
   }, [items])
 
   const isHold = !activateOn || activateOn === 'hold'
-  //#endregion
 
-  //#region refs
   const containerRef = useAnimatedRef<Animated.View>()
-  //#endregion
 
-  //#region functions
   const hapticResponse = () => {
     const style = !hapticFeedback ? 'Medium' : hapticFeedback
     switch (style) {
@@ -121,9 +107,7 @@ const HoldItemComponent = ({
       default:
     }
   }
-  //#endregion
 
-  //#region worklet functions
   const activateAnimation = (ctx: any) => {
     'worklet'
     if (!ctx.didMeasureLayout) {
@@ -250,9 +234,7 @@ const HoldItemComponent = ({
 
     return (willActivateWithTap && !isAnimationStarted.value) || !willActivateWithTap
   }
-  //#endregion
 
-  //#region gesture events
   const gestureEvent = useAnimatedGestureHandler<
     LongPressGestureHandlerGestureEvent | TapGestureHandlerGestureEvent,
     Context
@@ -288,9 +270,7 @@ const HoldItemComponent = ({
       if (closeOnTap) state.value = CONTEXT_MENU_STATE.END
     },
   })
-  //#endregion
 
-  //#region animated styles & props
   const animatedContainerStyle = useAnimatedStyle(() => {
     const animateOpacity = () => withDelay(HOLD_ITEM_TRANSFORM_DURATION, withTiming(1, { duration: 0 }))
 
@@ -349,7 +329,6 @@ const HoldItemComponent = ({
   const animatedPortalProps = useAnimatedProps<ViewProps>(() => ({
     pointerEvents: isActive.value ? 'auto' : 'none',
   }))
-  //#endregion
 
   //#region animated effects
   useAnimatedReaction(
@@ -360,7 +339,6 @@ const HoldItemComponent = ({
       }
     },
   )
-  //#endregion
 
   //#region components
   const GestureHandler = useMemo(() => {
@@ -396,9 +374,7 @@ const HoldItemComponent = ({
       </TapGestureHandler>
     )
   }, [overlayGestureEvent])
-  //#endregion
 
-  //#region render
   return (
     <>
       <GestureHandler>
@@ -415,7 +391,6 @@ const HoldItemComponent = ({
       </Portal>
     </>
   )
-  //#endregion
 }
 
 const HoldItem = memo(HoldItemComponent)

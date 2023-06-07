@@ -1,3 +1,4 @@
+import { BlurViewProps } from '@react-native-community/blur'
 import type { EdgeInsets } from 'react-native-safe-area-context'
 
 export interface HoldMenuProviderProps {
@@ -11,6 +12,7 @@ export interface HoldMenuProviderProps {
   theme?: 'dark' | 'light'
   iconComponent?: any
   children: React.ReactElement | React.ReactElement[]
+  backdropProps?: BackdropProps
 
   /**
    * Set this to prevent the menu to be opened under the unsafe area.
@@ -27,4 +29,10 @@ export interface HoldMenuProviderProps {
 
   onOpen?: () => void
   onClose?: () => void
+}
+
+export type BackdropProps = {
+  blurViewIntensity?: number
+  blurTypeDark?: BlurViewProps['blurType']
+  blurTypeLight?: BlurViewProps['blurType']
 }

@@ -28,6 +28,7 @@ const ProviderComponent = ({
   safeAreaInsets,
   onOpen,
   onClose,
+  ...backdropProps
 }: HoldMenuProviderProps) => {
   if (iconComponent) AnimatedIcon = Animated.createAnimatedComponent(iconComponent)
 
@@ -52,8 +53,8 @@ const ProviderComponent = ({
 
   useAnimatedReaction(
     () => state.value,
-    state => {
-      switch (state) {
+    value => {
+      switch (value) {
         case CONTEXT_MENU_STATE.ACTIVE: {
           if (onOpen) runOnJS(onOpen)()
           break
@@ -83,11 +84,12 @@ const ProviderComponent = ({
   )
 
   return (
+    // eslint-disable-next-line react-native/no-inline-styles
     <GestureHandlerRootView style={{ flex: 1 }}>
       <InternalContext.Provider value={internalContextVariables}>
         <PortalProvider>
           {children}
-          <Backdrop />
+          <Backdrop {...backdropProps.backdropProps} />
           <Menu />
         </PortalProvider>
       </InternalContext.Provider>
